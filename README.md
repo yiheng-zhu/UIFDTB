@@ -2,11 +2,11 @@
 
 ## A Unified and Interpretable Framework for Drug–Target Binding Prediction
 
-## Introduction
+## 1. Introduction
 
 UFIDTB is a unified and interpretable deep learning framework for drug–target binding prediction, supporting both drug–target interaction (DTI) classification and drug–target affinity (DTA) regression.
 
-## Framework Overview
+## 2. Framework Overview
 
 The overall architecture of UFIDTB, illustrated below, comprises four main components:
 
@@ -17,7 +17,7 @@ The overall architecture of UFIDTB, illustrated below, comprises four main compo
 
 ![Overview of UFIDTB](./Figure1.tif)
 
-## Requirements
+## 3. Requirements
 
 The current implementation was developed and tested with the following environment:
 
