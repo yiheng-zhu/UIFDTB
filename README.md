@@ -25,3 +25,23 @@ The current implementation was developed and tested with the following environme
 - PyTorch: 2.0.0
 - CUDA: 11.8
 - cuDNN: 8.7.0
+
+## 4. Code Implementation
+
+### 4.1 Drug and Target Feature Representation Extraction
+
+**Step 1: Install InterProScan**
+
+```bash
+wget https://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.69-101.0/interproscan-5.69-101.0-64-bit.tar.gz
+
+tar -pxvzf interproscan-5.69-101.0-64-bit.tar.gz
+```
+
+**Step 2: Configure the InterProScan installation path**
+
+Open `config.py` and modify the `interproscan_workdir` variable to specify the absolute path of the extracted InterProScan directory.
+
+```python
+interproscan_workdir = "/path/to/interproscan-5.69-101.0/"
+```
