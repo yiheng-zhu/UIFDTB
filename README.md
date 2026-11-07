@@ -26,6 +26,59 @@ The current implementation was developed and tested with the following environme
 - CUDA: 11.8
 - cuDNN: 8.7.0
 
+## 4. Dataset Preparation
+
+The benchmark datasets used in the UFIDTB paper are provided in the `dataset/` directory. These datasets cover both DTI classification and DTA regression tasks under different evaluation settings.
+
+The provided datasets include:
+
+| Dataset | Evaluation Setting |
+|---|---|
+| BIOSNAP | Random split |
+| BIOSNAP | Drug-cold |
+| BIOSNAP | Target-cold |
+| BindingDB | Random split |
+| Human | Random split |
+| Human | Pair-cold |
+| Human | Drug-cold |
+| Davis | Random split |
+| KIBA | Random split |
+
+Each dataset directory contains five CSV files:
+
+- `train.csv`: Training drug–target pairs and their labels.
+- `val.csv`: Validation drug–target pairs and their labels.
+- `test.csv`: Test drug–target pairs and their labels.
+- `protein.csv`: Protein sequences indexed by `Protein_index`.
+- `smile.csv`: Drug SMILES strings indexed by `SMILES_index`.
+
+The dataset split files contain the following columns:
+
+- `Y`: Binary interaction label (1 for interacting pairs and 0 for non-interacting pairs) or continuous affinity values for DTA prediction.
+- `SMILES_index`: Index of the corresponding drug molecule.
+- `Protein_index`: Index of the corresponding target protein.
+
+The `SMILES_index` and `Protein_index` columns are used to retrieve the corresponding molecular and protein information from `smile.csv` and `protein.csv`, respectively.
+
+**Example directory structure:**
+
+```text
+dataset/
+├── BIOSNAP_drug_cold/
+│   ├── train.csv
+│   ├── val.csv
+│   ├── test.csv
+│   ├── protein.csv
+│   └── smile.csv
+├── BIOSNAP_random_split/
+├── BIOSNAP_target_cold/
+├── BindingDB/
+├── Davis/
+├── Human_pair_cold/
+├── Human_random_split/
+└── KIBA/
+```
+
 ## 4. Code Implementation
 
 ### 4.1 Drug and Target Feature Representation Extraction
