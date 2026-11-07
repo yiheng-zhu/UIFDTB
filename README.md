@@ -17,3 +17,11 @@ The overall architecture of UFIDTB, illustrated below, comprises four main compo
 
 ![Overview of UFIDTB](./Figure1.tif)
 
+## Requirements
+
+The current implementation was developed and tested with the following environment:
+
+- Python: 3.8.19
+- PyTorch: 2.0.0
+- CUDA: 11.8
+- cuDNN: 8.7.0
