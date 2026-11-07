@@ -78,10 +78,11 @@ dataset/
 ├── Human_random_split/
 └── KIBA/
 ```
+**Note:** Before running the code, ensure that the working directory contains all five required CSV files: `train.csv`, `val.csv`, `test.csv`, `protein.csv`, and `smile.csv`.
 
-## 4. Code Implementation
+## 5. Code Implementation
 
-### 4.1 Drug and Target Feature Representation Extraction
+### 5.1 Drug and Target Feature Representation Extraction
 
 **Step 1: Install InterProScan**
 
