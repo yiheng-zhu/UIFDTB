@@ -82,7 +82,7 @@ dataset/
 
 ## 5. Code Implementation
 
-### 5.1 Feature Representation Extraction
+### 5.1 Feature Representation
 #### 5.1.1 Target Encoder
 
 **Step 1: Install InterProScan**
