@@ -218,7 +218,7 @@ Here, `test_example` is the working directory containing `protein.csv`. The prot
 
 <div align="justify">
 
-After execution, an `interpro` directory will be generated:
+**Output directory structure:**
 
 </div>
 
