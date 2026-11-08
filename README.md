@@ -279,7 +279,7 @@ test_example/
     └── ...
 ```
 
-**Step 6: Predict protein structures Using ESMFold**
+**Step 6: Predict protein structures using ESMFold**
 
 <div align="justify">
 
