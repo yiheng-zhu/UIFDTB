@@ -138,7 +138,7 @@ dataset/
 
 <div align="justify">
 
-Before target feature extraction, preprocess the protein sequences in `protein.csv` using the following command:
+Before feature extraction and ESMFold prediction, preprocess the protein sequences in `protein.csv` using the following command:
 
 </div>
 
@@ -150,9 +150,9 @@ python preprocess_protein.py ./test_example/
 
 Here, `test_example` is the working directory containing `protein.csv`. The script automatically backs up the original file as `protein_original.csv` and performs the following preprocessing operations:
 
-1. Convert protein sequences to uppercase.
-2. Remove the non-standard amino acid symbols `B`, `J`, `O`, `U`, `X`, and `Z`.
-3. Truncate sequences longer than 1,000 amino acid residues.
+- Convert protein sequences to uppercase.
+- Remove the non-standard amino acid symbols `B`, `J`, `O`, `U`, `X`, and `Z`.
+- Truncate sequences longer than 1,000 amino acid residues.
 
 The processed sequences are saved in `protein.csv`, replacing the original file.
 
@@ -160,7 +160,7 @@ The processed sequences are saved in `protein.csv`, replacing the original file.
 
 <div align="justify">
     
-**Step 1: Install InterProScan**
+**Step 2: Install InterProScan**
 
 </div>
 
@@ -172,7 +172,7 @@ tar -pxvzf interproscan-5.69-101.0-64-bit.tar.gz
 
 <div align="justify">
 
-**Step 2: Configure the InterProScan installation path**
+**Step 3: Configure the InterProScan installation path**
 
 </div>
 
@@ -188,7 +188,7 @@ interproscan_workdir = "/path/to/interproscan-5.69-101.0/"
 
 <div align="justify">
 
-**Step 3: Generate family-domain-based binary vectors**
+**Step 4: Generate family-domain-based binary vectors**
 
 </div>
 
@@ -241,7 +241,7 @@ test_example/
 
 <div align="justify">
 
-**Step 4: Generate ProtT5 Embeddings**
+**Step 5: Generate ProtT5 Embeddings**
 
 </div>
 
