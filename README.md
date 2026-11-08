@@ -134,8 +134,32 @@ dataset/
 ### 5.1 Feature Representation
 #### 5.1.1 Target Encoder
 
+**Step 1: Preprocess Protein Sequences**
+
 <div align="justify">
 
+Before target feature extraction, preprocess the protein sequences in `protein.csv` using the following command:
+
+</div>
+
+```bash
+python preprocess_protein.py ./test_example/
+```
+
+<div align="justify">
+
+Here, `test_example` is the working directory containing `protein.csv`. The script automatically backs up the original file as `protein_original.csv` and performs the following preprocessing operations:
+
+1. Convert protein sequences to uppercase.
+2. Remove the non-standard amino acid symbols `B`, `J`, `O`, `U`, `X`, and `Z`.
+3. Truncate sequences longer than 1,000 amino acid residues.
+
+The processed sequences are saved in `protein.csv`, replacing the original file.
+
+</div>
+
+<div align="justify">
+    
 **Step 1: Install InterProScan**
 
 </div>
