@@ -134,7 +134,7 @@ dataset/
 ### 5.1 Feature Representation
 #### 5.1.1 Target Encoder
 
-**Step 1: Preprocess Protein Sequences**
+**Step 1: Preprocess protein sequences**
 
 <div align="justify">
 
