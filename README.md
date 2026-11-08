@@ -127,7 +127,7 @@ test_example/
 - **`interpro_array/`**: Stores the generated Family-domain-based binary vectors in `.npy` format. Each protein is represented by a 45,899-dimensional binary vector, where each dimension indicates the presence or absence of a specific InterPro entry.
 
 
-**Step 4: Generate ProtT5 embeddings**
+**Step 4: Generate ProtT5 Embeddings**
 
 Run the following command to generate residue-level protein representations using the pre-trained ProtT5 model:
 
@@ -135,4 +135,6 @@ Run the following command to generate residue-level protein representations usin
 python generate_prottrans_feature.py ./test_example/
 ```
 
-Here, `test_example` is the working directory containing `protein.fasta`. The generated ProtT5 embeddings are saved in the `prottrans` directory under the working directory. Each protein is represented by a residue-level embedding, with a 1,024-dimensional vector for each amino acid residue.
+The input file `protein.fasta` is automatically generated from `protein.csv` during Step 3. The script uses this FASTA file to extract ProtT5 embeddings.
+
+The generated embeddings are saved in the `prottrans` directory under the working directory. Each protein is represented by a residue-level embedding, with a 1,024-dimensional vector for each amino acid residue.
