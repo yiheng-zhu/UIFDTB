@@ -134,7 +134,6 @@ Run the following command to generate residue-level protein representations usin
 ```bash
 python generate_prottrans_feature.py ./test_example/
 ```
-
-The input file `protein.fasta` is automatically generated from `protein.csv` during Step 3. The script uses this FASTA file to extract ProtT5 embeddings.
+Here, `test_example` is the working directory containing `protein.csv`. During Step 3, the protein sequences are processed by InterProScan to identify functional-domain annotations, and `protein.fasta` is automatically generated from `protein.csv`. In Step 4, this FASTA file is used as the input for ProtT5 embedding extraction.
 
 The generated embeddings are saved in the `prottrans` directory under the working directory. Each protein is represented by a residue-level embedding, with a 1,024-dimensional vector for each amino acid residue.
