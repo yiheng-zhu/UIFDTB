@@ -243,9 +243,7 @@ test_example/
 
 <div align="justify">
 
-**Step 5: Generate ProtT5 Embeddings**
-
-</div>
+**Step 5: Generate ProtT5 embeddings**
 
 <div align="justify">
 
@@ -256,8 +254,22 @@ Run the following command to generate residue-level protein representations usin
 ```bash
 python generate_prottrans_feature.py ./test_example/
 ```
+
 <div align="justify">
 
-Here, `test_example` is the working directory containing `protein.csv`. Step 3 generates functional-domain annotations and automatically converts `protein.csv` into `protein.fasta`, which serves as the input for ProtT5 embedding extraction in Step 4. The resulting residue-level embeddings are saved in the `prottrans_features` directory, with a 1,024-dimensional vector for each amino acid residue.
+Here, `test_example` is the working directory containing `protein.csv`. Step 3 generates functional-domain annotations and automatically converts `protein.csv` into `protein.fasta`, which serves as the input for ProtT5 embedding extraction in Step 5. The resulting residue-level embeddings are saved in the `prottrans_features` directory, with a 1,024-dimensional vector for each amino acid residue.
 
 </div>
+
+**Output directory structure:**
+
+```text
+test_example/
+├── protein.csv
+├── protein.fasta
+└── prottrans_features/
+    ├── 0.npy
+    ├── 1.npy
+    ├── 2.npy
+    └── ...
+```
