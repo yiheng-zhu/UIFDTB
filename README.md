@@ -278,3 +278,34 @@ test_example/
     ├── 2.pt
     └── ...
 ```
+
+**Step 6: Predict protein structures Using ESMFold**
+
+<div align="justify">
+
+Run the following command to predict protein structures using the pre-trained ESMFold model:
+
+</div>
+
+```bash
+python predict_structures_esmfold.py ./test_example/
+```
+
+<div align="justify">
+
+Here, `test_example` is the working directory containing `protein.fasta`, which is generated during Step 4. The predicted protein structures are saved in the `esmfold` directory in PDB format (`.pdb`), with filenames corresponding to the protein identifiers in the FASTA file. Existing non-empty PDB files are automatically skipped.
+
+</div>
+
+**Output directory structure:**
+
+```text
+test_example/
+├── protein.csv
+├── protein.fasta
+└── esmfold/
+    ├── 0.pdb
+    ├── 1.pdb
+    ├── 2.pdb
+    └── ...
+```
