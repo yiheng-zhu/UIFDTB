@@ -99,6 +99,8 @@ The dataset split files contain the following columns:
 
 The `SMILES_index` and `Protein_index` columns are used to retrieve the corresponding molecular and protein information from `smile.csv` and `protein.csv`, respectively.
 
+**Important:** The `SMILES_index` in `smile.csv` and the `Protein_index` in `protein.csv` must be consecutively numbered starting from 0 (i.e., 0, 1, 2, ..., N-1).
+
 </div>
 
 <div align="justify">
