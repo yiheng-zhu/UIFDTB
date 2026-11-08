@@ -225,6 +225,7 @@ Here, `test_example` is the working directory containing `protein.csv`. The prot
 ```text
 test_example/
 ├── protein.csv
+├── protein.fasta
 └── interpro/
     ├── interpro_results/
     └── interpro_array/
