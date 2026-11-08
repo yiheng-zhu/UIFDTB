@@ -18,10 +18,19 @@ The overall architecture of UIFDTB, illustrated below, comprises four main compo
 
 </div>
 
-- **Target Encoding:** Extracts complementary functional-domain and structure-aware target representations.
-- **Drug Encoding:** Extracts multi-view drug representations from Morgan fingerprints, ChemBERTa embeddings, and molecular graphs.
-- **Interaction Modeling:** Integrates global drug and target representations through learnable gating and captures fine-grained atom–residue interactions using bidirectional cross-attention.
-- **Task-specific Prediction:** Refines the joint drug–target representation through feature-wise attention and generates DTI interaction probabilities or DTA binding affinity scores.
+<div align="justify">
+
+<ul>
+<li><strong>Target Encoding:</strong> Extracts complementary functional-domain and structure-aware target representations.</li>
+
+<li><strong>Drug Encoding:</strong> Extracts multi-view drug representations from Morgan fingerprints, ChemBERTa embeddings, and molecular graphs.</li>
+
+<li><strong>Interaction Modeling:</strong> Integrates global drug and target representations through learnable gating and captures fine-grained atom–residue interactions using bidirectional cross-attention.</li>
+
+<li><strong>Task-specific Prediction:</strong> Refines the joint drug–target representation through feature-wise attention and generates DTI interaction probabilities or DTA binding affinity scores.</li>
+</ul>
+
+</div>
 
 ![Overview of UIFDTB](./Figure1.tif)
 
