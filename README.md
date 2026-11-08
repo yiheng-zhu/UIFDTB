@@ -292,6 +292,12 @@ test_example/
 
 <div align="justify">
 
+Install ESMFold and its required dependencies by following the instructions in the official [ESM repository](https://github.com/facebookresearch/esm). Ensure that PyTorch and a compatible CUDA environment are installed before proceeding. ESMFold also requires OpenFold and its associated dependencies.
+
+</div>
+
+<div align="justify">
+
 Run the following command to predict protein structures using the pre-trained ESMFold model:
 
 </div>
