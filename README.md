@@ -228,6 +228,10 @@ test_example/
 └── interpro/
     ├── interpro_results/
     └── interpro_array/
+        ├── 0.npy
+        ├── 1.npy
+        ├── 2.npy
+        └── ...
 ```
 
 <div align="justify">
@@ -268,8 +272,8 @@ test_example/
 ├── protein.csv
 ├── protein.fasta
 └── prottrans_features/
-    ├── 0.npy
-    ├── 1.npy
-    ├── 2.npy
+    ├── 0.pt
+    ├── 1.pt
+    ├── 2.pt
     └── ...
 ```
