@@ -46,6 +46,9 @@ The current implementation was developed and tested with the following environme
 - PyTorch: 2.0.0
 - CUDA: 11.8
 - cuDNN: 8.7.0
+- pandas: 2.0.3
+- transformers: 4.46.3
+- numpy: 1.23.0
 
 ## 4. Dataset Preparation
 
@@ -249,6 +252,12 @@ test_example/
 <div align="justify">
 
 **Step 5: Generate ProtT5 embeddings**
+
+<div align="justify">
+
+Install ProtT5 and configure the required dependencies by following the instructions provided in the official [ProtTrans repository](https://github.com/agemagician/ProtTrans).
+
+</div>
 
 <div align="justify">
 
