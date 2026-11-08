@@ -138,7 +138,7 @@ dataset/
 
 <div align="justify">
 
-Before feature extraction and ESMFold prediction, preprocess the protein sequences in `protein.csv` using the following command:
+Before target feature extraction, preprocess the protein sequences in `protein.csv` using the following command:
 
 </div>
 
