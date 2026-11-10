@@ -49,6 +49,7 @@ The current implementation was developed and tested with the following environme
 - pandas: 2.0.3
 - transformers: 4.46.3
 - numpy: 1.23.0
+- dgl: 1.1.0+cu118
 
 ## 4. Dataset Preparation
 
