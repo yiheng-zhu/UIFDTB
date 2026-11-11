@@ -359,7 +359,7 @@ test_example/
 
 
 #### 5.1.2 Drug Encoder
-**Step 1: Generate ChemBERTa Embeddings**
+**Step 1: Generate ChemBERTa embeddings**
 
 <div align="justify">
 
