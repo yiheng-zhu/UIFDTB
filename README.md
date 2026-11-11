@@ -375,7 +375,7 @@ python generate_chemberta_features.py ./test_example/
 
 <div align="justify">
 
-Here, `test_example` is the working directory containing `smile.csv`, which stores molecular SMILES strings in the `SMILES` column. The script applies mean pooling to the ChemBERTa token embeddings to obtain a fixed-dimensional representation for each molecule. The resulting embeddings are saved as `.npy` files in the `chemberta` directory, with filenames corresponding to their molecule indices.
+Here, `test_example` is the working directory containing `smile.csv`, which stores molecular SMILES strings in the `SMILES` column. The script applies mean pooling to the ChemBERTa token embeddings to obtain a 1024-dimensional representation for each molecule. The resulting embeddings are saved as `.npy` files in the `chemberta` directory, with filenames corresponding to their molecule indices.
 
 </div>
 
