@@ -384,7 +384,7 @@ Here, `test_example` is the working directory containing `smile.csv`, which stor
 ```text
 test_example/
 ├── smile.csv
-└── chemberta/
+└── chemberta_features/
     ├── mean_0.npy
     ├── mean_1.npy
     ├── mean_2.npy
