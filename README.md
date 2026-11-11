@@ -434,3 +434,50 @@ test_example/
 ├── val_remove_target_drug_pairs.csv
 └── test_remove_target_drug_pairs.csv
 ```
+
+### 5.2 Model Training
+
+**Step 1: Train the DTA Model**
+
+<div align="justify">
+
+After completing the data preparation steps, run the following command to train the DTA prediction model:
+
+</div>
+
+```bash
+python train_dta.py ./test_example/ 0
+```
+
+<div align="justify">
+
+Here, `test_example` is the working directory containing the preprocessed PyTorch datasets in the `dataset` directory and the protein graphs in `graphs.pkl`. The second argument specifies the GPU index used for training (e.g., `0` for GPU 0).
+
+The model is trained for 5 independent rounds, with 100 epochs per round, a batch size of 64, and a learning rate of 0.00003. During training, model performance is evaluated on both validation and test sets at each epoch using MSE, R², and concordance index (CI). The model checkpoints, prediction results, and training records are saved in the `model` and `res` directories, respectively.
+
+</div>
+
+**Output directory structure:**
+
+```text
+test_example/
+├── model/
+│   ├── round1/
+│   │   ├── model1/
+│   │   │   └── epoch_1.pth
+│   │   ├── model2/
+│   │   └── ...
+│   ├── round2/
+│   └── ...
+└── res/
+    ├── round1/
+    │   ├── record.txt
+    │   ├── valid/
+    │   │   ├── result1.txt
+    │   │   └── ...
+    │   └── test/
+    │       ├── result1.txt
+    │       └── ...
+    ├── round2/
+    └── ...
+```
