@@ -51,6 +51,7 @@ The current implementation was developed and tested with the following environme
 - numpy: 1.23.0
 - dgl: 1.1.0+cu118
 - rdkit: 2024.09.4
+- torch_geometric: 2.6.1
 
 ## 4. Dataset Preparation
 
