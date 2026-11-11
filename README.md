@@ -357,6 +357,8 @@ test_example/
 └── graphs.pkl
 ```
 
+
+#### 5.1.2 Drug Encoder
 **Step 1: Generate ChemBERTa Embeddings**
 
 <div align="justify">
