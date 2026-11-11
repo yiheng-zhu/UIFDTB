@@ -356,3 +356,45 @@ test_example/
 ├── points.pkl
 └── graphs.pkl
 ```
+
+**Step 1: Generate ChemBERTa Embeddings**
+
+<div align="justify">
+
+Install the required dependencies for ChemBERTa embedding extraction. Ensure that PyTorch and CUDA are properly configured, and install RDKit and the other required packages:
+
+</div>
+
+```bash
+pip install transformers rdkit pandas tqdm numpy
+```
+
+<div align="justify">
+
+The pre-trained ChemBERTa model (`DeepChem/ChemBERTa-100M-MLM`) is automatically downloaded from Hugging Face when the feature extraction script is executed. The script uses the Hugging Face mirror (`https://hf-mirror.com`) by default.
+
+Run the following command to extract molecular representations:
+
+</div>
+
+```bash
+python generate_chemberta_features.py ./test_example/
+```
+
+<div align="justify">
+
+Here, `test_example` is the working directory containing `smile.csv`, which stores molecular SMILES strings in the `SMILES` column. The script applies mean pooling to the ChemBERTa token embeddings to obtain a fixed-dimensional representation for each molecule. The resulting embeddings are saved as `.npy` files in the `chemberta` directory, with filenames corresponding to their molecule indices.
+
+</div>
+
+**Output directory structure:**
+
+```text
+test_example/
+├── smile.csv
+└── chemberta/
+    ├── mean_0.npy
+    ├── mean_1.npy
+    ├── mean_2.npy
+    └── ...
+```
