@@ -459,25 +459,57 @@ The model is trained for 5 independent rounds, with 100 epochs per round, a batc
 
 **Output directory structure:**
 
+**Output directory structure:**
+
 ```text
 test_example/
+│
 ├── model/
 │   ├── round1/
-│   │   ├── model1/
-│   │   │   └── epoch_1.pth
-│   │   ├── model2/
-│   │   └── ...
+│   │   ├── epoch_1.pth
+│   │   ├── epoch_2.pth
+│   │   ├── epoch_3.pth
+│   │   ├── ...
+│   │   └── epoch_100.pth
+│   │
 │   ├── round2/
-│   └── ...
-└── res/
+│   │   ├── epoch_1.pth
+│   │   ├── ...
+│   │   └── epoch_100.pth
+│   │
+│   ├── round3/
+│   │   └── ...
+│   │
+│   ├── round4/
+│   │   └── ...
+│   │
+│   └── round5/
+│       └── ...
+│
+└── result/
     ├── round1/
     │   ├── record.txt
     │   ├── valid/
     │   │   ├── result1.txt
-    │   │   └── ...
+    │   │   ├── result2.txt
+    │   │   ├── ...
+    │   │   └── result100.txt
+    │   │
     │   └── test/
     │       ├── result1.txt
-    │       └── ...
+    │       ├── result2.txt
+    │       ├── ...
+    │       └── result100.txt
+    │
     ├── round2/
-    └── ...
+    │   └── ...
+    │
+    ├── round3/
+    │   └── ...
+    │
+    ├── round4/
+    │   └── ...
+    │
+    └── round5/
+        └── ...
 ```
