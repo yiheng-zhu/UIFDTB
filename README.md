@@ -363,19 +363,9 @@ test_example/
 
 <div align="justify">
 
-Install the required dependencies for ChemBERTa embedding extraction. Ensure that PyTorch and CUDA are properly configured, and install RDKit and the other required packages:
+First, install the ChemBERTa environment by following the instructions in the official [ChemBERTa-3 repository](https://github.com/deepforestsci/chemberta3#setup-environment).
 
-</div>
-
-```bash
-pip install transformers rdkit pandas tqdm numpy
-```
-
-<div align="justify">
-
-The pre-trained ChemBERTa model (`DeepChem/ChemBERTa-100M-MLM`) is automatically downloaded from Hugging Face when the feature extraction script is executed. The script uses the Hugging Face mirror (`https://hf-mirror.com`) by default.
-
-Run the following command to extract molecular representations:
+After installing the required dependencies, return to the UFIDTB project directory and run the following command to extract molecular representations using the pre-trained ChemBERTa model (`DeepChem/ChemBERTa-100M-MLM`):
 
 </div>
 
