@@ -325,3 +325,34 @@ test_example/
     ├── 2.pdb
     └── ...
 ```
+**Step 7: Generate Protein Graphs**
+
+<div align="justify">
+
+Run the following commands to extract Cα atomic coordinates from ESMFold-predicted structures and construct protein graphs:
+
+</div>
+
+```bash
+python generate_points.py ./test_example/
+python generate_graphs.py ./test_example/
+```
+
+<div align="justify">
+
+Here, `generate_points.py` extracts the three-dimensional coordinates and amino acid identities of Cα atoms from the predicted PDB files and saves them in `points.pkl`. Subsequently, `generate_graphs.py` integrates the extracted structural information with ProtT5 residue-level embeddings to construct protein graphs. Each amino acid residue is represented as a graph node, with its ProtT5 embedding as the node feature. Edges are established between residues whose Cα distances are within the predefined cutoff (`distance_cutoff` in `config.py`), with spatial distances stored as edge features. Self-loops are also included. The resulting protein graphs are saved in `graphs.pkl` in DGL format.
+
+</div>
+
+**Output directory structure:**
+
+```text
+test_example/
+├── prottrans/
+├── esmfold/
+│   ├── 0.pdb
+│   ├── 1.pdb
+│   └── ...
+├── points.pkl
+└── graphs.pkl
+```
