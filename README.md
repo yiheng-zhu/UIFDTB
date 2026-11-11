@@ -414,7 +414,11 @@ Here, `test_example` is the working directory containing the five input CSV file
 - **Feature integration:** Integrates Morgan fingerprints, ChemBERTa embeddings, InterProScan features, and protein sequence representations.
 - **Dataset preparation:** Packages the resulting drug–target representations into PyTorch datasets for training, validation, and testing.
 
-The generated datasets are saved in PyTorch format (`.pt`) in the `dataset` directory. If all three processed datasets already exist, the script automatically skips preprocessing. Drug–target pairs for which molecular graphs cannot be constructed are recorded in separate CSV files, containing `SMILES_index` and `Protein_index`.
+<div align="justify">
+
+Drug–target pairs for which molecular graphs cannot be constructed are removed from the corresponding datasets and recorded in separate CSV files (e.g., `train_remove_target_drug_pairs.csv`), containing `SMILES_index` and `Protein_index`.
+
+</div>
 
 </div>
 
