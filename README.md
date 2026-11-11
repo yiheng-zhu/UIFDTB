@@ -409,10 +409,10 @@ python data_process.py ./test_example/
 
 Here, `test_example` is the working directory containing the five input CSV files and the extracted drug and protein representations. The script performs the following operations:
 
-- **Molecular Graph Construction:** Constructs molecular graphs from SMILES, representing atoms as nodes and chemical bonds as edges.
-- **Morgan Fingerprint Extraction:** Generates 1,024-dimensional Morgan fingerprints for each molecule.
-- **Feature Integration:** Integrates Morgan fingerprints, ChemBERTa embeddings, InterProScan features, and protein sequence representations.
-- **Dataset Preparation:** Packages the resulting drug–target representations into PyTorch datasets for training, validation, and testing.
+- **Molecular graph construction:** Constructs molecular graphs from SMILES, representing atoms as nodes and chemical bonds as edges.
+- **Morgan fingerprint extraction:** Generates 1,024-dimensional Morgan fingerprints for each molecule.
+- **Feature integration:** Integrates Morgan fingerprints, ChemBERTa embeddings, InterProScan features, and protein sequence representations.
+- **Dataset preparation:** Packages the resulting drug–target representations into PyTorch datasets for training, validation, and testing.
 
 The generated datasets are saved in PyTorch format (`.pt`) in the `dataset` directory. If all three processed datasets already exist, the script automatically skips preprocessing. Drug–target pairs for which molecular graphs cannot be constructed are recorded in separate CSV files, containing `SMILES_index` and `Protein_index`.
 
