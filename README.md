@@ -453,7 +453,7 @@ python train_dta.py ./test_example/ 0
 
 Here, `test_example` is the working directory containing the preprocessed PyTorch datasets in the `dataset` directory and the protein graphs in `graphs.pkl`. The second argument specifies the GPU index used for training (e.g., `0` for GPU 0).
 
-The model is trained for 5 independent rounds, with 100 epochs per round, a batch size of 64, and a learning rate of 0.00003. During training, model performance is evaluated on both validation and test sets at each epoch using MSE, R², and concordance index (CI). The model checkpoints, prediction results, and training records are saved in the `model` and `res` directories, respectively.
+The model is trained for 5 independent rounds, with 100 epochs per round, a batch size of 64, and a learning rate of 0.00003. During training, model performance is evaluated on both validation and test sets at each epoch using MSE, R², and concordance index (CI). The model checkpoints, prediction results, and training records are saved in the `model` and `result` directories, respectively.
 
 </div>
 
