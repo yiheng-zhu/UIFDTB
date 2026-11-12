@@ -513,3 +513,52 @@ test_example/
     └── round5/
         └── ...
 ```
+
+### 5.3 Performance Evaluation
+
+#### 5.3.1 Evaluate DTA Model Performance
+
+<div align="justify">
+
+After completing the five independent training rounds, run the following command to evaluate DTA model performance:
+
+</div>
+
+```bash
+python evaluate_dta.py ./test_example/result/
+```
+
+<div align="justify">
+
+Here, `test_example/result` is the working directory containing the prediction results from five independent training rounds. For each epoch, predictions from the five rounds are averaged to obtain ensemble predictions on the validation and test sets. Model performance is evaluated using mean squared error (MSE), the coefficient of determination (RM²), and the concordance index (CI).
+
+The optimal epoch is selected based on the lowest validation MSE across all 100 epochs. The optimal epoch and its corresponding validation MSE are printed to the console and saved in `final_record`. Ensemble predictions for all epochs on the validation and test sets are saved in the `final_result` directory.
+
+</div>
+
+**Output directory structure:**
+
+```text
+test_example/
+└── result/
+    ├── final_record
+    │
+    └── final_result/
+        ├── valid/
+        │   ├── result1.txt
+        │   ├── result2.txt
+        │   ├── ...
+        │   └── result100.txt
+        │
+        └── test/
+            ├── result1.txt
+            ├── result2.txt
+            ├── ...
+            └── result100.txt
+```
+
+<div align="justify">
+
+The `final_record` file stores the evaluation metrics for each epoch and the optimal epoch selected based on validation MSE. The `final_result` directory contains the ensemble predictions, with each result file storing the ground-truth values and corresponding predicted values.
+
+</div>
