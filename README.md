@@ -459,8 +459,6 @@ The model is trained for 5 independent rounds, with 100 epochs per round, a batc
 
 **Output directory structure:**
 
-**Output directory structure:**
-
 ```text
 test_example/
 │
