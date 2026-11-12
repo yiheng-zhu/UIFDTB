@@ -496,6 +496,24 @@ test_example/
         └── ...
 ```
 
+**Step 2: Train the DTI Model**
+
+<div align="justify">
+
+Run the following command to train the DTI prediction model:
+
+</div>
+
+```bash
+python train_dti.py ./test_example/ 0
+```
+
+<div align="justify">
+
+The model is trained for five independent rounds, with 100 epochs per round. A bidirectional contrastive loss is incorporated into the binary classification objective to enhance drug–target representation learning. Model checkpoints, training records, and prediction results are saved in the `model` and `result` directories, respectively.
+
+</div>
+
 ### 5.3 Performance Evaluation
 
 #### 5.3.1 Evaluate DTA Model Performance
