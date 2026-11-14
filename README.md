@@ -567,7 +567,7 @@ The `final_record` file stores the evaluation metrics for each epoch and the opt
 
 <div align="justify">
 
-DTI model evaluation consists of three steps. First, the optimal epoch is selected based on the average predictions from five independent training rounds. Next, the selected checkpoint is used to generate predictions from two complementary branches: BCE-based prediction (Mode 0) and contrastive similarity-based prediction (Mode 1). Finally, the predictions from the two branches are combined through weighted fusion to obtain the final DTI predictions.
+DTI model evaluation consists of three steps. First, the optimal epoch is selected based on the AUROC calculated from the averaged predictions on the validation set across five independent training rounds, using the sigmoid-based prediction branch (Mode 0). Next, the selected checkpoint is used to generate predictions from two complementary branches: BCE-based prediction (Mode 0) and contrastive similarity-based prediction (Mode 1). Finally, the predictions from the two branches are combined through weighted fusion to obtain the final DTI predictions.
 
 </div>
 
