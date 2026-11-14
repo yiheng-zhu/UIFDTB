@@ -567,14 +567,14 @@ The `final_record` file stores the evaluation metrics for each epoch and the opt
 
 <div align="justify">
 
-DTI model evaluation consists of three steps. First, the optimal epoch is selected based on the AUROC calculated from the averaged predictions on the validation set across five independent training rounds, using the sigmoid-based prediction branch (Mode 0). Next, the selected checkpoint is used to generate predictions from two complementary branches: BCE-based prediction (Mode 0) and contrastive similarity-based prediction (Mode 1). Finally, the predictions from the two branches are combined through weighted fusion to obtain the final DTI predictions.
+DTI model evaluation consists of three steps. First, the optimal epoch is selected based on the AUROC calculated from the averaged predictions on the validation set across five independent training rounds, using the sigmoid-based prediction branch (Mode 0). Next, the selected checkpoint is used to generate predictions from two complementary branches: Sigmoid-based prediction (Mode 0) and contrastive similarity-based prediction (Mode 1). Finally, the predictions from the two branches are combined through weighted fusion to obtain the final DTI predictions.
 
 </div>
 
-**Step 1: Select the Optimal Epoch**
+**Step 1: Select the optimal epoch**
 
 ```bash
-python 01_select_best_dti_epoch.py ./test_example/result/
+python select_best_dti_epoch.py ./test_example/result/
 ```
 
 <div align="justify">
@@ -583,10 +583,10 @@ The predictions from five independent training rounds are averaged at each epoch
 
 </div>
 
-**Step 2: Generate DTI Predictions**
+**Step 2: Generate DTI predictions**
 
 ```bash
-python 02_generate_dti_predictions.py ./test_example/ 0
+python generate_dti_predictions.py ./test_example/ 0
 ```
 
 <div align="justify">
@@ -595,10 +595,10 @@ The script automatically loads the optimal checkpoint identified in Step 1 and g
 
 </div>
 
-**Step 3: Search for the Optimal Fusion Weight**
+**Step 3: Search for the optimal fusion weight**
 
 ```bash
-python 03_search_dti_fusion_weight.py ./test_example/result/
+python search_dti_fusion_weight.py ./test_example/result/
 ```
 
 <div align="justify">
