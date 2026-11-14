@@ -629,7 +629,7 @@ The predictions from the two complementary branches are combined using a weighte
 
 Here, `ŷ₀` and `ŷ₁` denote the predictions from the sigmoid-based prediction branch (Mode 0) and the similarity-based prediction branch (Mode 1), respectively, and `w` is the fusion weight.
 
-The fusion weight is searched from 0.01 to 1.00 with a step size of 0.01. For each candidate weight, the fused predictions are evaluated on the validation set, and the optimal weight is selected based on the highest AUROC. The selected weight is then applied to the test set to generate the final fused predictions, which are evaluated using AUROC, AUPRC, Accuracy, Sensitivity, Specificity, MCC, and F1-score.
+The fusion weight is searched from 0.01 to 1.00 with a step size of 0.01. For each candidate weight, the fused predictions are evaluated on the validation set, and the optimal weight is selected based on the highest AUROC. The selected weight is then applied to the test set to generate the final fused predictions, which are evaluated using AUROC, AUPRC, and F1-score.
 
 </div>
 
