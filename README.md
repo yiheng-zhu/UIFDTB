@@ -510,7 +510,7 @@ python train_dti.py ./test_example/ 0
 
 <div align="justify">
 
-The model is trained for five independent rounds, with 100 epochs per round. A bidirectional contrastive loss is incorporated into the binary classification objective to enhance drug–target representation learning. Model checkpoints, training records, and prediction results are saved in the `model` and `result` directories, respectively.
+The model is trained for five independent rounds, with 100 epochs per round. A bidirectional contrastive loss is incorporated into the binary classification objective to enhance drug–target representation learning. Model checkpoints, training records, and prediction results are saved in the `model` and `result` directories, respectively. The second argument specifies the GPU index used for training (e.g., 0 for GPU 0).
 
 </div>
 
@@ -567,7 +567,7 @@ The `final_record` file stores the evaluation metrics for each epoch and the opt
 
 <div align="justify">
 
-DTI model evaluation consists of three steps. First, the optimal epoch is selected based on the AUROC calculated from the averaged predictions on the validation set across five independent training rounds, using the sigmoid-based prediction branch (Mode 0). Next, the selected checkpoint is used to generate predictions from two complementary branches: Sigmoid-based prediction (Mode 0) and contrastive similarity-based prediction (Mode 1). Finally, the predictions from the two branches are combined through weighted fusion to obtain the final DTI predictions.
+DTI model evaluation consists of three steps. First, the optimal epoch is selected based on the AUROC calculated from the averaged predictions on the validation set across five independent training rounds, using the sigmoid-based prediction branch (Mode 0). Next, the selected checkpoint is used to generate predictions from two complementary branches: sigmoid-based prediction (Mode 0) and contrastive similarity-based prediction (Mode 1). Finally, the predictions from the two branches are combined through weighted fusion to obtain the final DTI predictions.
 
 </div>
 
@@ -579,23 +579,37 @@ python select_best_dti_epoch.py ./test_example/result/
 
 <div align="justify">
 
-The predictions from five independent training rounds are averaged at each epoch. The optimal epoch is selected based on the highest AUROC on the validation set across all 50 epochs. The evaluation metrics and optimal epoch are saved in `final_record`.
+The predictions from five independent training rounds are averaged at each epoch. The optimal epoch is selected based on the highest AUROC on the validation set across all 100 epochs. The evaluation metrics and optimal epoch are saved in `final_record`.
 
 </div>
 
-**Step 2: Generate DTI predictions**
+**Step 2: Generate DTI Predictions**
+
+Run the following command to generate DTI predictions using the optimal checkpoint selected in Step 1:
 
 ```bash
-python generate_dti_predictions.py ./test_example/ 0
+python generate_dti_predictions.py ./test_example/ 0 <optimal_epoch>
 ```
 
 <div align="justify">
 
-The script automatically loads the optimal checkpoint identified in Step 1 and generates predictions using both branches. Mode 0 uses the BCE-based prediction branch, while Mode 1 uses the contrastive similarity-based prediction branch. Predictions are generated for all five training rounds and saved separately under the corresponding mode directories.
+Here, `test_example` is the working directory, `0` specifies the GPU device ID (e.g., GPU 0), and `<optimal_epoch>` denotes the optimal training epoch identified in Step 1.
+
+The script automatically loads the selected checkpoint and generates predictions through two complementary branches: the sigmoid-based prediction branch (Mode 0) and the similarity-based prediction branch (Mode 1). Predictions are generated independently for all five training rounds on both the validation and test sets. The resulting predictions and evaluation records are saved separately in the corresponding mode directories.
 
 </div>
 
-**Step 3: Search for the optimal fusion weight**
+**Example:**
+
+If the optimal epoch identified in Step 1 is 50, run:
+
+```bash
+python generate_dti_predictions.py ./test_example/ 0 50
+```
+
+**Step 3: Search for the Optimal Fusion Weight**
+
+Run the following command to search for the optimal fusion weight and generate the final DTI predictions:
 
 ```bash
 python search_dti_fusion_weight.py ./test_example/result/
@@ -603,19 +617,19 @@ python search_dti_fusion_weight.py ./test_example/result/
 
 <div align="justify">
 
-The predictions from the two branches are combined using a weighted fusion strategy:
+The predictions from the two complementary branches are combined using a weighted fusion strategy:
 
 </div>
 
-\[
-\hat{y}=w\hat{y}_{0}+(1-w)\hat{y}_{1}
-\]
+```text
+ŷ = w × ŷ₀ + (1 − w) × ŷ₁
+```
 
 <div align="justify">
 
-where \(\hat{y}_{0}\) and \(\hat{y}_{1}\) denote the predictions from Mode 0 and Mode 1, respectively, and \(w\) is the fusion weight.
+Here, `ŷ₀` and `ŷ₁` denote the predictions from the sigmoid-based prediction branch (Mode 0) and the similarity-based prediction branch (Mode 1), respectively, and `w` is the fusion weight.
 
-The fusion weight is searched from 0.01 to 1.00, with a step size of 0.01. The optimal weight is selected based on the highest AUROC on the validation set. The corresponding fused predictions are then evaluated on the test set using AUROC, AUPRC, Accuracy, Sensitivity, Specificity, MCC, and F1-score.
+The fusion weight is searched from 0.01 to 1.00 with a step size of 0.01. For each candidate weight, the fused predictions are evaluated on the validation set, and the optimal weight is selected based on the highest AUROC. The selected weight is then applied to the test set to generate the final fused predictions, which are evaluated using AUROC, AUPRC, Accuracy, Sensitivity, Specificity, MCC, and F1-score.
 
 </div>
 
@@ -646,6 +660,6 @@ test_example/
 
 <div align="justify">
 
-The `final_record` file stores the evaluation results for each epoch and the selected optimal epoch. The `mode0` and `mode1` directories contain predictions generated by the two prediction branches. The `combine_result` directory stores the final fused predictions for the validation and test sets.
+The `final_record` file stores the evaluation results for each epoch and the selected optimal epoch. The `mode0` directory stores predictions from the sigmoid-based prediction branch, while `mode1` stores predictions from the similarity-based prediction branch. Each mode contains the validation and test predictions, along with the corresponding evaluation records, for five independent training rounds. The `combine_result` directory stores the final fused predictions for the validation and test sets.
 
 </div>
